@@ -67,6 +67,5 @@ pipeline {
   post {
     success { echo "Built and pushed ${IMAGE}:${VERSION}" }
     failure { echo 'The build failed. Open the stage that turned red.' }
-    cleanup { cleanWs() }
   }
 }

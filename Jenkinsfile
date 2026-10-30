@@ -37,7 +37,9 @@ pipeline {
           sh '''
             . .venv/bin/activate
             pip install --quiet "pip-audit>=2.7,<3"
-            pip-audit -r requirements.txt
+            pip-audit -r requirements.txt \
+            --format json \
+            --output pip-audit-report.json
           '''
         }
       }
